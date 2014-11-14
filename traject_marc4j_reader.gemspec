@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Bill Dueber"]
   spec.email         = ["bill@dueber.com"]
   spec.summary       = %q{Use marc4j (java) library under traject}
-  spec.description   = %q{Allows you to leverage marc-marc4j to use marc4j as a reader under traject when using jruby }
+  spec.description   = %q{Allows jruby users to leverage marc-marc4j to use marc4j as a reader under traject. }
   spec.homepage      = ""
   spec.license       = "MIT"
 
