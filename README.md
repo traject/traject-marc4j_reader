@@ -16,9 +16,13 @@ original marc4j java object with the `marc4j_reader.keep_marc4j` setting.
 ## Why use this?
 
 
-The biggest reason would be for faster XML parsing and generation than the vanilla
+The biggest reason would be for faster MARC/MARC-XML parsing and generation than the vanilla
 [marc](https://github.com/ruby-marc/ruby-marc) gem can provide, or if you need to do something wacky with the marc4j
 internal structure (such as feed it to legacy java code you have lying around).
+
+In general, the marc4j library will parse marc21 (binary) and MARC-XML roughly twice
+as fast as the pure-ruby library. While MARC parsing tends to not be a huge part
+of the workload in a traject run, you'll almost certainly see performance gains.
 
 ## Installation
 
