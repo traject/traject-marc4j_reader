@@ -28,7 +28,7 @@ of the workload in a traject run, you'll almost certainly see performance gains.
 
 Add this line to your application's Gemfile:
 
-    gem 'traject_marc4j_reader'
+    gem 'traject-marc4j_reader'
 
 And then execute:
 
@@ -36,7 +36,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install traject_marc4j_reader
+    $ gem install traject-marc4j_reader
 
 ## Traject::Marc4jReader settings
 
