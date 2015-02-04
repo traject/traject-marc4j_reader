@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'traject/marc4j_reader/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "traject_marc4j_reader"
-  spec.version       = Traject::Marc4jReader::VERSION
+  spec.name          = "traject-marc4j_reader"
+  spec.version       = Traject::Marc4JReader::VERSION
   spec.authors       = ["Bill Dueber"]
   spec.email         = ["bill@dueber.com"]
   spec.summary       = %q{Use marc4j (java) library under traject}
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "traject"
-  spec.add_dependency "marc", ">= 0.8.0"
+  spec.add_dependency "marc", "~>1"
   spec.add_dependency "marc-marc4j", ">=0.1.1" # use and convert marc4j
 
 
