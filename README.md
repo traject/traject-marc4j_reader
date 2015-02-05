@@ -1,8 +1,8 @@
-# Traject::Marc4jReader
+# Traject::Marc4JReader
 
-**Note**: `Traject::Marc4jReader` is for JRuby only.
+**Note**: `Traject::Marc4JReader` is for JRuby only.
 
-`Traject::Marc4jReader` is a reader for the [traject](https://github.com/traject-project/traject) ETL system
+`Traject::Marc4JReader` is a reader for the [traject](https://github.com/traject-project/traject) ETL system
 that allows the use of [marc4j](https://github.com/marc4j/marc4j) as a reader when dealing with MARC
 binary or MARC-XML files. It is of no use outside of `traject` run under JRuby.
 
