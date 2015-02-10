@@ -20,7 +20,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "traject", "~>2"
   spec.add_dependency "marc", "~>1"
   spec.add_dependency "marc-marc4j", "~>1" # use and convert marc4j
 
