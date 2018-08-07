@@ -125,6 +125,8 @@ class Traject::Marc4JReader
   end
 
   def each
+    return to_enum(:each) unless block_given?
+
     while (internal_reader.hasNext)
       begin
         marc4j = internal_reader.next
