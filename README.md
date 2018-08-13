@@ -26,17 +26,26 @@ of the workload in a traject run, you'll almost certainly see performance gains.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Traject prior to 3.0 included this as a dependency on JRuby, and defaulted to using it.
 
-    gem 'traject-marc4j_reader'
+In Traject 3.0+, you need to manually add this gem and configure to use it.
 
-And then execute:
+If you are using bundler and a `Gemfile`, add `gem "traject-marc4j_reader", "~> 1.0"` to your `Gemfile`. Otherwise, just `gem install traject-marc4j_reader`.
 
-    $ bundle
+Then, in your traject config file:
 
-Or install it yourself as:
+    # Instead of require in config file, you could use the `-r` traject
+    # command-line option.
+    require 'traject-marc4j_reader'
 
-    $ gem install traject-marc4j_reader
+    settings do
+      provide "reader_class_name", "Traject::Marc4JReader"
+
+      # Recommend marc4j_reader.permissive true unless you have reason not to.
+      # true was default provided by core traject gem in Traject pre-3.0.
+      # Only relevant for binary MARC source data.
+      provide "marc4j_reader.permissive", true
+    end
 
 ## Traject::Marc4jReader settings
 
@@ -49,7 +58,7 @@ so output will always reflect that conversion.
 * `marc4j.jar_dir`:   Path to a directory containing Marc4J jar file to use. All .jar's in dir will
                       be loaded. If unset, uses marc4j.jar bundled with traject.
 
-* `marc4j_reader.permissive`: Used by Marc4JReader only when marc.source_type is 'binary', boolean, argument to the underlying MarcPermissiveStreamReader. Default true.
+* `marc4j_reader.permissive`: Used by Marc4JReader only when marc.source_type is 'binary', boolean, argument to the underlying MarcPermissiveStreamReader. Default false, but recommend true for most uses.
 
 * `marc4j_reader.source_encoding`: Used by Marc4JReader only when marc.source_type is 'binary', encoding strings accepted
   by marc4j MarcPermissiveStreamReader. Default "BESTGUESS", also "UTF-8", "MARC"

@@ -19,9 +19,9 @@ require 'marc/marc4j'
 #
 # * marc_source.type:     serialization type. default 'binary', also 'xml' (TODO: json/marc-in-json)
 #
-# * marc4j_reader.permissive:   default true, false to turn off permissive reading. Used as
+# * marc4j_reader.permissive: Used as
 #                             value to 'permissive' arg of MarcPermissiveStreamReader constructor.
-#                             Only used for 'binary'
+#                             Only used for 'binary'. Default false, but recommend true for most uses.
 #
 # * marc_source.encoding: Only used for 'binary', otherwise always UTF-8.
 #         String of the values MarcPermissiveStreamReader accepts:
