@@ -120,7 +120,7 @@ class Traject::Marc4JReader
     when "xml"
       MarcXmlReader.new(input_stream.to_inputstream)
     else
-      raise IllegalArgument.new("Unrecgonized marc_source.type: #{input_type}")
+      raise ArgumentError.new("Unrecgonized marc_source.type: #{input_type}")
     end
   end
 
