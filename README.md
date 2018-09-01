@@ -36,7 +36,7 @@ Then, in your traject config file:
 
     # Instead of require in config file, you could use the `-r` traject
     # command-line option.
-    require 'traject-marc4j_reader'
+    require 'traject/marc4j_reader'
 
     settings do
       provide "reader_class_name", "Traject::Marc4JReader"
