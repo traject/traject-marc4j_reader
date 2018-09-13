@@ -42,7 +42,9 @@ Then, in your traject config file:
       provide "reader_class_name", "Traject::Marc4JReader"
 
       # Recommend marc4j_reader.permissive true unless you have reason not to.
-      # true was default provided by core traject gem in Traject pre-3.0.
+      # true was default provided by core traject gem in Traject pre-3.0, but isn't
+      # anymore in traject 3.0 -- so set to true explicitly to maintain behavior
+      #
       # Only relevant for binary MARC source data.
       provide "marc4j_reader.permissive", true
     end
