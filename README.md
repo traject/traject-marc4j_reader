@@ -68,6 +68,8 @@ so output will always reflect that conversion.
 * `marc4j_reader.keep_marc4j`: After translating the marc4j record into a normal ruby-marc object,
 provides access to the former via `record#original_marc4j`.
 
+* 'marc4j_reader.class': Set to eg 'MarcStreamReader' to use that more strict Marc4J reader class, instead of the default Marc4J `MarcPermissiveStreamReader`.
+
 
 ## Sample use
 
