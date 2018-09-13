@@ -81,6 +81,7 @@ class Traject::Marc4JReader
 
     # Convenience
     java_import org.marc4j.MarcPermissiveStreamReader
+    java_import org.marc4j.MarcStreamReader
     java_import org.marc4j.MarcXmlReader
 
   end
@@ -112,11 +113,16 @@ class Traject::Marc4JReader
   def create_marc_reader!
     case input_type
     when "binary"
-      permissive = settings["marc4j_reader.permissive"].to_s == "true"
+      the_stream = input_stream.to_inputstream
+      if settings['marc4j_reader.class'] == 'MarcStreamReader'
+          MarcStreamReader.new(the_stream, specified_source_encoding)
+      else
+        permissive = settings["marc4j_reader.permissive"].to_s == "true"
 
-      # #to_inputstream turns our ruby IO into a Java InputStream
-      # third arg means 'convert to UTF-8, yes'
-      MarcPermissiveStreamReader.new(input_stream.to_inputstream, permissive, true, specified_source_encoding)
+        # #to_inputstream turns our ruby IO into a Java InputStream
+        # third arg means 'convert to UTF-8, yes'
+        MarcPermissiveStreamReader.new(the_stream, permissive, true, specified_source_encoding)
+      end
     when "xml"
       MarcXmlReader.new(input_stream.to_inputstream)
     else
